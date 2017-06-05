@@ -124,11 +124,8 @@ public class File_Compare {
 			
 			for(int i = 0; i < origin_list.size(); i++) { // file_original.txt에만 있는 파일
 				boolean aa = false;
-				for(int j = 0; j < chan_list.size(); j++) {
-					if(origin_list.get(i).equals(chan_list.get(j))) {
+				if(chan_list.contains(origin_list.get(i))) {
 						aa = true;
-						break;
-					}
 				}
 				if(!aa) {
 					rs.write(origin_list.get(i));
