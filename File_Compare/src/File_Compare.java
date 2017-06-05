@@ -95,11 +95,8 @@ public class File_Compare {
 			
 			for(int i = 0; i < chan_list.size(); i++) { // file_change.txt에만 있는 파일(새로 생성되거나 기존파일이 수정된 경우)
 				boolean aa = false;
-				for(int j = 0; j < origin_list.size(); j++) {
-					if(chan_list.get(i).equals(origin_list.get(j))) {
+				if(origin_list.contains(chan_list.get(i))) {
 						aa = true;
-						break;
-					}
 				}
 				if(!aa) { // file_original.txt에 없는 경우만 실행
 					rs.write(chan_list.get(i));
